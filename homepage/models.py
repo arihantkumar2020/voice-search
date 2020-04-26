@@ -2,19 +2,9 @@ from django.db import models
 
 # Create your models here.
 
-class RecentClass:
-    recentid : int
-    recent_search_1 : str
-    recent_search_2 : str
-    recent_search_3 : str
-    recent_search_4 : str
+class UserSearches(models.Model):
 
-
-
-
-class PopularClass:
-    popularid : int
-    popular_search_1 : str
-    popular_search_2 : str
-    popular_search_3 : str
-    popular_search_4 : str
+    search_input = models.CharField(max_length=300)
+    search_date = models.DateField()
+    search_time = models.TimeField()
+    search_count = models.IntegerField()

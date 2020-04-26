@@ -116,10 +116,10 @@
                     <p></p>
                     <p></p>
 
-                    <p style="color: khaki;">{{ recent_var.recent_search_1 }}</p>
-                    <p style="color: khaki;">{{ recent_var.recent_search_2 }}</p>
-                    <p style="color: khaki;">{{ recent_var.recent_search_3 }}</p>
-                    <p style="color: khaki;">{{ recent_var.recent_search_4 }}</p>
+                    {% for recent in recent_searches %}
+                      <p style="color: khaki;">{{ recent.search_input }}</p>
+                    {% endfor %}
+                    
 
                   </div>
                 </div>
@@ -137,10 +137,10 @@
                     <p></p>
                     <p></p>
 
-                    <p style="color: khaki;">{{ popular_var.popular_search_1 }}</p>
-                    <p style="color: khaki;">{{ popular_var.popular_search_2 }}</p>
-                    <p style="color: khaki;">{{ popular_var.popular_search_3 }}</p>
-                    <p style="color: khaki;">{{ popular_var.popular_search_4 }}</p>
+                    {% for popular in popular_searches %}
+                    <p style="color: khaki;">{{ popular.search_input }}</p>
+                    {% endfor %}
+                    
                   </div>
                 </div>
               </div>

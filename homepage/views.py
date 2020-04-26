@@ -3,7 +3,7 @@ from django.http import HttpResponse, request
 import speech_recognition as sr
 import pyaudio
 import webbrowser as wb
-from .databasealgo import getpopularsearches, getrecentsearches
+from .models import UserSearches
 
 # Create your views here.
 
@@ -13,7 +13,6 @@ from .databasealgo import getpopularsearches, getrecentsearches
 
 
 def home(request):
-
     
     return render(request, 'home.html', allDynamicContent())
 
@@ -23,10 +22,11 @@ def home(request):
 
 def allDynamicContent():
 
-    recent_var = getrecentsearches()
-    poppular_var = getpopularsearches()
+    recent_searches = UserSearches.objects.all()
+
+    popular_searches = UserSearches.objects.all()
     
-    return {'recent_var': recent_var, 'popular_var': poppular_var}
+    return {'recent_searches': recent_searches, 'popular_searches': popular_searches}
 
 
 
