@@ -83,9 +83,10 @@
                 <div style="color: grey;">--OR--</div>
 
                 <div>
-                  <form action = "home" method = 'post'>
 
-                    <input type = "hidden" name = 'record'>
+                  <form action = "home" method = 'post'>
+                    {% csrf_token %}
+                    <input type = "hidden" name = 'speechToText'>
                     <p></p>
                     <button class = "btn btn-outline-warning">
                         Speak
@@ -160,7 +161,7 @@
               Copyright © 2020 All rights reserved | Made with ❤ in INDIA</span>
 
             <!--connect with us using social platforms-->
-            <span class="footer-content" style="padding-left: 10px;">Connect with us at : 
+            <span class="footer-content" style="padding-left: 10px; color: #8f8f8f">Connect with us at : 
             <a href="" class="pad-footer   fab fa-twitter"></a>
             <a href="" class="pad-footer   fab fa-facebook-f"></a>
             <a href="" class="pad-footer   fab fa-instagram"></a>
