@@ -19,6 +19,25 @@ def home(request):
 
 
 
+def textWeb(request):
+
+    search_string = request.POST['TextInput']
+
+    outputlist = list(search_string.split(' '))
+
+    search_new_str = '+'.join(outputlist)
+
+    searchquery = 'https://www.google.com/search?q='+search_new_str
+
+    wb.get().open_new_tab(searchquery)
+
+    return render(request, 'home.html')
+
+
+
+
+
+
 def speech(request):
 
     r = sr.Recognizer()

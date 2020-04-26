@@ -73,9 +73,14 @@
                 <p></p>
 
                 <!--search bar block-->
-                <form class="gap"  action="/" method="post">
-                  <input type="text" name="Input" value="" placeholder="Enter Text">
-                  <button type="submit" name="button" class="btn btn-outline-primary">Search</button>
+                <form class="gap" action="texttosearch" method='post'>
+
+                  {% csrf_token %}
+
+                  <input type="text" name="TextInput" name="" placeholder="Enter Text....">
+
+                  <button type="submit" name="searchButton" class="btn btn-outline-primary">Search</button>
+
                 </form> 
 
                 <p></p>
@@ -84,7 +89,7 @@
 
                 <div>
 
-                  <form action = "home" method = 'post'>
+                  <form action = "speaktosearch" method = 'post'>
                     {% csrf_token %}
                     <input type = "hidden" name = 'speechToText'>
                     <p></p>
