@@ -3,6 +3,7 @@ from django.http import HttpResponse, request
 import speech_recognition as sr
 import pyaudio
 import webbrowser as wb
+from .databasealgo import getpopularsearches, getrecentsearches
 
 # Create your views here.
 
@@ -12,8 +13,20 @@ import webbrowser as wb
 
 
 def home(request):
-    return render(request, 'home.html')
 
+    
+    return render(request, 'home.html', allDynamicContent())
+
+
+
+
+
+def allDynamicContent():
+
+    recent_var = getrecentsearches()
+    poppular_var = getpopularsearches()
+    
+    return {'recent_var': recent_var, 'popular_var': poppular_var}
 
 
 
@@ -31,7 +44,7 @@ def textWeb(request):
 
     wb.get().open_new_tab(searchquery)
 
-    return render(request, 'home.html')
+    return render(request, 'home.html', allDynamicContent())
 
 
 
@@ -60,4 +73,4 @@ def speech(request):
 
     wb.get().open_new_tab(searchquery)
 
-    return render(request, 'home.html')
+    return render(request, 'home.html', allDynamicContent())
