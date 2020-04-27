@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'voicesearch.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Voicesearchdatabase',
+        'NAME': 'voicesearchdatabase',
         'USER': 'postgres',
         'PASSWORD' : 'anonymous',
         'HOST' : 'localhost',
