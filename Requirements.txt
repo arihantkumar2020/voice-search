@@ -1,6 +1,6 @@
 asgiref==3.2.7
 Django==3.0.7
-Jinja2==2.11.2
+Jinja2==2.11.3
 MarkupSafe==1.1.1
 psycopg2==2.8.5
 PyAudio==0.2.11
